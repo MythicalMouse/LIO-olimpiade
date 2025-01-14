@@ -300,3 +300,38 @@ Nr. Testu apraksts Punkti
 6. Bez papildu ierobežojumiem 30
 Kopā: 100
 Bulcinas 2(2)
+
+
+def process_bulcinas(n, p, bulcinas, pirceji):
+    # Saglabā bulciņu daudzumus hashmapā
+    bulcinas_count = {}
+    for bulcina in bulcinas:
+        bulcinas_count[bulcina] = bulcinas_count.get(bulcina, 0) + 1
+
+    rezultati = []
+
+    # Apstrādā katru pircēju
+    for prioritates in pirceji:
+        nopirka = False
+        for priorit in prioritates:
+            if bulcinas_count.get(priorit, 0) > 0:
+                rezultati.append(priorit)
+                bulcinas_count[priorit] -= 1
+                nopirka = True
+                break
+        if not nopirka:
+            rezultati.append("-")
+    
+    return rezultati
+
+# Ievades apstrāde
+n, p = map(int, input().split())
+bulcinas = [input().strip() for _ in range(n)]
+pirceji = [input().strip().split() for _ in range(p)]
+
+# Atrisināt problēmu
+rezultati = process_bulcinas(n, p, bulcinas, pirceji)
+
+# Izdrukāt rezultātus
+print("\n".join(rezultati))
+
