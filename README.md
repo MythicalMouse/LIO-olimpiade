@@ -152,3 +152,151 @@ Nr. Testu apraksts Punkti
 5. Bez papildu ierobežojumiem 45
 Kopā: 100
 Meli 2(2)
+
+
+
+
+
+Bulcinas
+LATVIJAS 38. INFORMĀTIKAS OLIMPIĀDE
+NOVADA OLIMPIĀDE – 2025. GADA 14. JANVĀRIS
+JAUNĀKĀ (8. - 10. KLAŠU) GRUPA
+Bulciņas un vēlmes
+Slavena beķereja katru rītu izcep 𝑁 bulciņas (ar tām saprotot arī kūciņas un smalkmaizītes),
+un visas tās pirms beķerejas atvēršanas izvieto vitrīnā. Tad beķereja tiek atvērta un pēc kārtas tiek
+apkalpoti 𝑃 pircēji. Katrs pircējs vēlas nopirkt vienu bulciņu un uzskatīsim, ka katram pircējam ir tieši
+trīs visiecienītākie bulciņu veidi jeb prioritātes. Ir iespējams, ka kādam pircējam vairākas prioritātes
+sakrīt, kā arī var būt, ka starp prioritātēm ir tādi bulciņu veidi, kurus slavenā beķereja nemaz
+nepiedāvā.
+Katrs pircējs rīkojas pēc šāda algoritma:
+            JA ir pieejama 1. prioritātes bulciņa,
+                TAD pircējs to nopērk un dodas prom
+            CITĀDI
+                  JA ir pieejama 2. prioritātes bulciņa,
+                      TAD pircējs to nopērk un dodas prom
+                  CITĀDI
+                        JA ir pieejama 3. prioritātes bulciņa,
+                            TAD pircējs to nopērk un dodas prom
+                        CITĀDI pircējs dodas prom, neko nenopircis.
+Piemēram, ja kādu rītu ir izceptas piecas biezpienmaizītes (B), divas kanēļa bulciņas (K), divas austiņas
+(A) un trīs rožmaizītes (R), un astoņu pircēju prioritātes ir A-B-K, A-B-K, R-R-R, K-B-B, A-K-B, A-K-K, K-RA, X-A-R, tad pirmie divi pircēji nopirks pa austiņai, trešais – rožmaizīti, ceturtais un piektais – kanēļa
+bulciņu, bet sestais dosies prom, neko nenopircis, jo gan austiņas, gan kanēļa bulciņas ir jau izpirktas.
+Septītais un astotais pircējs nopirks pa rožmaizītei.
+Uzrakstiet datorprogrammu, kas nosaka, kāda veida bulciņu nopirks katrs no pircējiem!
+Ievaddati
+Ievaddatu pirmajā rindā doti divi naturāli skaitļi, kas atdalīti ar tukšumzīmi – izcepto bulciņu
+skaits 𝑁(𝑁 ≤ 2 ⋅ 10
+5
+) un pircēju skaits 𝑃(𝑃 ≤ 2 ⋅ 10
+5
+).
+Nākamajās 𝑁 ievaddatu rindās katrā dots viena bulciņu veida identifikators – angļu alfabēta lielo
+un mazo burtu un ciparu virkne, kuras garums ir vismaz viens, bet ne vairāk kā deviņi simboli. Lielie
+un mazie burti identifikatoros jāuzskata par atšķirīgiem simboliem. Katram 𝑖(1 ≤ 𝑖 ≤ 𝑁) ievaddatu
+𝑖 + 1-ajā rindā norādīts bulciņas, kas tika izcepta un novietota vitrīnā kā 𝑖-tā pēc kārtas, identifikators.
+Nākamajās 𝑃 ievaddatu rindās katrā doti trīs ar tukšumzīmēm atdalīti bulciņu veidu
+identifikatori. Katram 𝑖(1 ≤ 𝑖 ≤ 𝑃) un 𝑗(1 ≤ 𝑗 ≤ 3) 𝑗-tais identifikators pēc kārtas ievaddatu 𝑁 +
+1 + 𝑖-tajā rindā norāda 𝑖-tā pēc kārtas pircēja 𝑗-to prioritāti.
+Izvaddati
+Izvaddatiem jāsatur 𝑃 rindas. Katram 𝑖(1 ≤ 𝑖 ≤ 𝑃) 𝑖-tajā izvaddatu rindā jābūt tās bulciņas,
+kuru nopirks pēc kārtas 𝑖-tais pircējs, identifikatoram. Ja pircējs dosies prom, neko nenopircis, tad
+attiecīgajā rindā jāizvada simbols „-“ (mīnuszīme).
+Ierobežojumi un prasības
+Atmiņas apjoma un izpildes laika ierobežojumus skatīt sacensību sistēmā uzdevuma sadaļā
+„Formulējums“ ⇒ „Tehniskā informācija“.
+Klases vārds valodā Java rakstītam risinājumam: Bulcinas
+Bulcinas 1(2)
+Bulcinas
+Piemēri
+Ievaddati Izvaddati Piezīme
+12 8
+A
+B
+R
+K
+A
+B
+B
+B
+R
+R
+B
+K
+A B K
+A B K
+R R R
+K B B
+A K B
+A K K
+K R A
+X A R
+A
+A
+R
+K
+K
+-
+R
+R
+Atbilst piemēram
+uzdevuma tekstā.
+Ievaddati Izvaddati
+5 6
+A1271
+a1271
+b33
+a1271
+A1271
+a1271 b33 A1271
+a1271 b33 A1271
+a1271 B33 A1271
+a1271 B33 A1271
+a1271 B33 A1271
+a1271 b33 A1271
+a1271
+a1271
+A1271
+A1271
+-
+b33
+1. apakšuzdevuma testu ievaddati
+Ievaddati
+8 5
+l1o
+2o25
+l1o
+pn4d
+2o25
+2o25
+M
+l1o
+M l1o pn4d
+M 2o25 pn4d
+s3 aqd l1o
+M 2o25 pn4d
+l1o M pn4d
+Ievaddati
+7 6
+2o25
+DjUU
+DjUU
+l1o
+2o25
+2o25
+2o25
+DjUU l1o DjUU
+2o25 2o25 l1o
+2o25 DjUU l1o
+DjUU f DjUU
+l1o 58 x
+2o25 2o25 l1o
+Apakšuzdevumi un to vērtēšana
+Nr. Testu apraksts Punkti
+1. Uzdevuma tekstā dotie divi testi 4
+2. 𝑁 ≤ 1000, 𝑃 ≤ 1000 20
+3. Bulciņas veida identifikatori ir skaitļi no 1 līdz 99 11
+4. Bulciņas veida identifikatoru garums ir 1 simbols 11
+5. Bulciņas veida identifikatoru garums ir 2 simboli 24
+6. Bez papildu ierobežojumiem 30
+Kopā: 100
+Bulcinas 2(2)
